@@ -3,8 +3,8 @@
  * @returns {string}
  */
 function getAuthorName() {
-    // return location.href?.split("/")[3];
-    return document.querySelector("link[id=feedLink]")?.getAttribute("href")?.split("/")?.at(-1);
+    return location.href?.split("/")[3];
+    // return document.querySelector("link[id=feedLink]")?.getAttribute("href")?.split("/")?.at(-1);
 }
 
 /**
@@ -15,7 +15,7 @@ function getAuthorName() {
  * @param maxPaginationLimit
  * @returns {Promise<any | never>}
  */
-function getAuthorData(username,url,startFromPost,maxPaginationLimit) {
+function getAuthorData(username, url, startFromPost, maxPaginationLimit) {
     return fetch(url, {
         method: 'POST',
         headers: {
@@ -40,7 +40,7 @@ function getAuthorData(username,url,startFromPost,maxPaginationLimit) {
  */
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     const authorName = getAuthorName();
-    getAuthorData(authorName, request.url, request.startFromPost, request.maxPaginationLimit).then(
-        response => sendResponse(response)
-    )
+    getAuthorData(authorName, request.url, request.startFromPost, request.maxPaginationLimit)
+        .then(response => sendResponse(response))
+    return true;
 });

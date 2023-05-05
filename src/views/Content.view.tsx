@@ -21,7 +21,6 @@ export function ContentView({ author }: ContentProps) {
                     </Grid>
                 </Grid>
             </Grid>
-
             <FooterComponent />
         </Grid>
     )
