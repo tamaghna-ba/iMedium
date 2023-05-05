@@ -13,9 +13,9 @@ export class AuthorDataService {
         if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
             return new AuthorModel(
                 "121312",
-                "https://miro.medium.com/fit/c/176/176/1*nguBSHdpmneK9MYsFuBbzw.jpeg",
-                "Bartosz Salwiczek",
-                "bsalwiczek",
+                "https://miro.medium.com/fit/c/176/176/1*Ez4pJtbwusgC_MtL4gSA6A.png",
+                "Tamaghna Banerjee",
+                "tamaghna91",
                 10,
                 0,
                 315,

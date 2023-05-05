@@ -1,5 +1,5 @@
 import { Chip, Grid, Link, Typography } from "@mui/material";
-import { EmailLinkComponent } from "./EmailLink.component";
+import { ContactLinkComponent } from "./ContactLink.component";
 
 export function FooterComponent() {
     return (
@@ -10,7 +10,9 @@ export function FooterComponent() {
                         Buy medium mebership from referal</Link> to support!</Typography>
             } />
             <Chip variant="outlined" label={
-                <Typography fontSize={12}><EmailLinkComponent /></Typography>
+                <Typography fontSize={12}>
+                    <ContactLinkComponent />
+                </Typography>
             } />
             <Chip variant="outlined" label={
                 <Typography fontSize={12} >Made by Tamaghna Banerjee
