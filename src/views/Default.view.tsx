@@ -1,6 +1,5 @@
 import { Link, Typography, Button } from "@mui/material";
 import { FooterComponent } from "../components/Footer.component";
-import SendIcon from '@mui/icons-material/Send';
 import { green } from '@mui/material/colors';
 
 interface InitialProps {
@@ -11,6 +10,7 @@ export function DefaultView(props: InitialProps) {
     return(
         <>
             <div className="center-view">
+                <img className="avatar-image" src={'./medium.png'} width={60} alt={'iMedium'}/>
                 <Typography variant="h2" component="h2" style={{fontWeight: "bold" }}>
                     iMedium
                 </Typography>
@@ -22,8 +22,8 @@ export function DefaultView(props: InitialProps) {
                 </Typography>
                 <div style={{ marginTop: "20px" }} >
                     <Button size="large" variant="contained"
-                            sx={{ backgroundColor: green['A700'] }}
-                            onClick={ props.loadData } endIcon={<SendIcon />}>
+                            sx={{ backgroundColor: green['500'], shadow: "0" }}
+                            onClick={ props.loadData }>
                         Load profile data
                     </Button>
                 </div>

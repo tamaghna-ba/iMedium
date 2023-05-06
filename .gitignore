@@ -26,3 +26,6 @@ yarn-error.log*
 # others
 .idea/
 .env
+build.crx
+build.pem
+package-lock.json

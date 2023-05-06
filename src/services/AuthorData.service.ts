@@ -5,9 +5,9 @@ import { PostsToAuthorDataMapperService } from "./PostsToAuthorMap.service";
 import {PostType} from "../types/Post.type";
 
 export class AuthorDataService {
-    private readonly MAX_MEDIUM_PAGINATION_LIMIT = 25;
-    private readonly MAX_POSTS_CALLS = 100;
-    private readonly MEDIUM_URL = "https://medium.com/_/graphql";
+    private readonly MAX_MEDIUM_PAGINATION_LIMIT = process.env.REACT_APP_MAX_MEDIUM_PAGINATION_LIMIT;
+    private readonly MAX_POSTS_CALLS = process.env.REACT_APP_MAX_POSTS_CALLS || 0;
+    private readonly MEDIUM_URL = process.env.REACT_APP_MEDIUM_URL;
 
     async fetchAuthorData(setPostsLoaded: Function): Promise<any | null> {
         if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {

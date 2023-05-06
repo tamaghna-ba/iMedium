@@ -5,7 +5,7 @@ import { NoPostsView } from "./views/NoPosts.view";
 import { ErrorView } from "./views/Error.view";
 import { ContentView } from "./views/Content.view";
 import { AuthorModel } from "./models/Author.model";
-import './styles/App.css';
+import './App.css';
 import { AuthorDataService } from "./services/AuthorData.service";
 
 enum View { Initial, Loading, NoPost, Error, Content }
@@ -21,6 +21,7 @@ function App() {
         setView(View.Loading);
         try {
             const authorData = await service.fetchAuthorData(setPostsLoaded);
+            console.log(authorData);
             if (!authorData) {
                 setView(View.NoPost);
                 return;

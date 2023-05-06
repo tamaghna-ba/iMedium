@@ -13,10 +13,6 @@
     "default_popup": "index.html",
     "default_title": "Open Medium Any Author's profile"
   },
-  "permissions":[
-    "background",
-    "tabs"
-  ],
   "icons": {
     "16": "icons/favicon-16x16.png",
     "32": "icons/favicon-32x32.png",
