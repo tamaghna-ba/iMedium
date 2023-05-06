@@ -1,6 +1,6 @@
 {
   "name": "iMedium",
-  "description": "Built inside iMerit for quickly checkout Medium's any author profile",
+  "description": "A simple Chrome extension to quickly view Medium's any author profile and stats. Crafted with ❤️ in iMerit",
   "version": "1.0.0",
   "manifest_version": 3,
   "content_scripts": [
