@@ -2,6 +2,9 @@ import { PostType } from "../types/Post.type";
 import { AuthorModel } from "../models/Author.model";
 import{ PostModel } from "../models/Post.model";
 
+/**
+ * The function which maps(links/connects) the type(API schema) with the model
+ */
 export class PostsToAuthorDataMapperService {
     map(posts: PostType[]): AuthorModel {
         const authorPosts = posts

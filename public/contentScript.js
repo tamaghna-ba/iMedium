@@ -37,7 +37,10 @@ function getAuthorData(username, url, startFromPost, maxPaginationLimit) {
 
 /**
  * Listen from message pool of particular request
- */
+ * @request: The incoming payload
+ * @sender: whos is sending it, most supposed to be a tab or an URL
+ * @sendResponse: a callback function as action
+ **/
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     const authorName = getAuthorName();
     getAuthorData(authorName, request.url, request.startFromPost, request.maxPaginationLimit)

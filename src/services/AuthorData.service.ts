@@ -39,6 +39,10 @@ export class AuthorDataService {
         return mapper.map(posts);
     }
 
+    /**
+     * Iteration through paging of posts
+     * @param setPostsLoaded
+     */
     async getAllPosts(setPostsLoaded: Function): Promise<PostType[]> {
         let startFromPost;
         let iter = 0;
@@ -53,10 +57,15 @@ export class AuthorDataService {
         return posts;
     }
 
+    /**
+     * triggering point to catch up the posts
+     * @param startFromPost
+     */
     async getPostsPage(startFromPost?: string): Promise<HomePagePostsType> {
         return new Promise<HomePagePostsType>((resolve, reject) => {
             chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
                 if(tabs.length === 0) reject("No tabs!");
+                // sending actionable to content script listener
                 chrome.tabs.sendMessage(tabs[0].id!, {
                     startFromPost,
                     maxPaginationLimit: this.MAX_MEDIUM_PAGINATION_LIMIT,

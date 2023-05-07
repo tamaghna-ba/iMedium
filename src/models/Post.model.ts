@@ -1,3 +1,7 @@
+/**
+ * Post model
+ */
+
 export class PostModel {
     constructor (
         public readonly title: string,

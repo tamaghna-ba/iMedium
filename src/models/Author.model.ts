@@ -1,5 +1,8 @@
 import { PostModel } from "./Post.model";
 
+/**
+ * The whole schema that represents in UI
+ */
 export class AuthorModel {
     constructor(
         public readonly id: string,

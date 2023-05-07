@@ -1,7 +1,10 @@
 import { NewsLetterV3Type } from "./NewsLetterV3.type";
 import { SocialStatsType } from "./SocialStats.type";
 
-export class CreatorType {
+/**
+ * Definition of Author data type
+ */
+export class AuthorType {
     constructor (
         public readonly id: string,
         public readonly name: string,
