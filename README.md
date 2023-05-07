@@ -1,46 +1,60 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# iMedium
 
-## Available Scripts
+A simple Chrome extension to quickly view Medium's any author profile and stats. Crafted with ❤️ in iMerit
 
-In the project directory, you can run:
 
-### `npm start`
+## How it works?
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Go to medium.com with keeping this pattern type URL either or -
+- https://medium.com/@MediumStaff
+- https://medium.com/@bsalwiczek/how-to-develop-react-chrome-extension-for-medium-in-26-steps-d0401149e3a2
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Now click the chrome extension icon, popup window opens and the author profile with blogs, claps, clappers will load as in charts and data tables.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Reference
 
-### `npm run build`
+ - [Sample Medium Profile](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
+ - [Figma URL](https://www.figma.com/file/FfurrkgQc7R0gBFJJtJXqr/iMedium-Chrome-Plugin-Flow?type=whiteboard&node-id=0%3A1&t=tF7NfRL0vtdZwREL-1)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Authors
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [Github: @findela](https://www.github.com/findela)
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Tech Stack
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Client:** React, Typescript, Chrome Extension API
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+**Server:** Not in scope
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## Flow Diagram
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![App Screenshot](https://iili.io/HSsaS5l.md.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+
+## Installation
+
+Install iMedium with npm
+
+```bash
+  cd to the <directory>
+  npm install
+  npm start (Run in dev mode)
+  npm run build (build file of chrom extension compatible)
+
+  - Go to chrome extension panel
+  - Click on load unpacked
+  - Browse by selecting build folder
+  - You are done ✅
+```
+
+
+    
+## Feedback
+
+If you have any feedback, please reach out to us at tamaghna@findela.com / tamaghna.ba@imerit.net
+
