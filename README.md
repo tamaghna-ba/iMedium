@@ -33,7 +33,7 @@ Now click the chrome extension icon, popup window opens and the author profile w
 
 ## Flow Diagram
 
-![App Screenshot](https://iili.io/HSsaS5l.md.png)
+![App Screenshot](https://i.ibb.co/M8hpYQk/i-Medium-Chrome-Plugin-Flow.png)
 
 
 ## Installation
@@ -52,7 +52,8 @@ Install iMedium with npm
   - You are done ✅
 ```
 
-
+## Deployment
+Chrome WebStore Deployment: In Progress
     
 ## Feedback
 

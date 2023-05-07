@@ -9,7 +9,6 @@ interface BasicInfoProps {
 export function BasicInfoComponent ({author} : BasicInfoProps) {
     const getMemberDate = (memberSince: number): string => {
         const date = new Date(memberSince);
-        console.log(date);
         return date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
     }
 
