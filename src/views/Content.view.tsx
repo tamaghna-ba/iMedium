@@ -17,28 +17,20 @@ export function ContentView({ author }: ContentProps) {
     const [showClappers, setShowClappers] = useState<boolean>(true);
 
     return(
-        <Grid container spacing={0.5} direction="column">
+        <Grid container spacing={0.5} direction="column" className={'terimeri'}>
             <Grid container item>
                 <Grid container spacing={0.5}>
                     <Grid item xs={5}>
-                        <Card variant="outlined" sx={{height: "100%"}}>
-                            <CardContent>
-                                <BasicInfoComponent author={author} />
-                            </CardContent>
-                        </Card>
+                        <BasicInfoComponent author={author} />
                     </Grid>
                     <Grid item xs={7}>
-                        <Card variant="outlined" sx={{height: "100%"}}>
-                            <CardContent>
-                                <DataStatsComponent author={author} />
-                            </CardContent>
-                        </Card>
+                        <DataStatsComponent author={author} />
                     </Grid>
                 </Grid>
             </Grid>
             <Grid item>
-                <Card variant="outlined">
-                    <CardContent >
+                <Card variant="outlined" style={{marginBottom: "10px"}}>
+                    <CardContent style={{padding: "12px 10px"}}>
                         <Grid container>
                             <Grid item xs={9}>
                                 <DataChartComponent posts={author.posts} showResponses={showResponses} showClaps={showClaps} showClappers={showClappers} />

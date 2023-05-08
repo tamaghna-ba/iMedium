@@ -42,7 +42,7 @@ function getAuthorData(username, url, startFromPost, maxPaginationLimit) {
  * @sendResponse: a callback function as action
  **/
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-    const authorName = getAuthorName();
+    const authorName = request.authorName || getAuthorName();
     getAuthorData(authorName, request.url, request.startFromPost, request.maxPaginationLimit)
         .then(response => sendResponse(response))
     return true;

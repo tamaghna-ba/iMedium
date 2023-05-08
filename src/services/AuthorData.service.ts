@@ -9,7 +9,7 @@ export class AuthorDataService {
     private readonly MAX_POSTS_CALLS = process.env.REACT_APP_MAX_POSTS_CALLS || 0;
     private readonly MEDIUM_URL = process.env.REACT_APP_MEDIUM_URL;
 
-    async fetchAuthorData(setPostsLoaded: Function): Promise<any | null> {
+    async fetchAuthorData(setPostsLoaded: Function, userName: String = ''): Promise<any | null> {
         if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
             return new AuthorModel(
                 "121312",
@@ -33,7 +33,7 @@ export class AuthorDataService {
                 ]
             );
         }
-        const posts = await this.getAllPosts(setPostsLoaded);
+        const posts = await this.getAllPosts(setPostsLoaded, userName);
         if (posts.length === 0) return null;
         const mapper = new PostsToAuthorDataMapperService();
         return mapper.map(posts);
@@ -42,14 +42,15 @@ export class AuthorDataService {
     /**
      * Iteration through paging of posts
      * @param setPostsLoaded
+     * @param userName
      */
-    async getAllPosts(setPostsLoaded: Function): Promise<PostType[]> {
+    async getAllPosts(setPostsLoaded: Function, userName?: String): Promise<PostType[]> {
         let startFromPost;
         let iter = 0;
         let posts: PostType[] = [];
         do {
             iter += 1;
-            const homepagePostsConnectionDto: HomePagePostsType = await this.getPostsPage(startFromPost);
+            const homepagePostsConnectionDto: HomePagePostsType = await this.getPostsPage(startFromPost, userName);
             posts = posts.concat(homepagePostsConnectionDto.posts);
             setPostsLoaded(posts.length);
             startFromPost = homepagePostsConnectionDto.pagingInfo?.next?.from;
@@ -60,14 +61,16 @@ export class AuthorDataService {
     /**
      * triggering point to catch up the posts
      * @param startFromPost
+     * @param userName
      */
-    async getPostsPage(startFromPost?: string): Promise<HomePagePostsType> {
+    async getPostsPage(startFromPost?: string, userName?: String): Promise<HomePagePostsType> {
         return new Promise<HomePagePostsType>((resolve, reject) => {
             chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
                 if(tabs.length === 0) reject("No tabs!");
                 // sending actionable to content script listener
                 chrome.tabs.sendMessage(tabs[0].id!, {
                     startFromPost,
+                    authorName: userName,
                     maxPaginationLimit: this.MAX_MEDIUM_PAGINATION_LIMIT,
                     url: this.MEDIUM_URL
                 },

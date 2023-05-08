@@ -15,13 +15,13 @@ function App() {
     const [author, setAuthor] = useState<AuthorModel>();
     const [view, setView] = useState<View>(View.Initial);
     const [postsLoaded, setPostsLoaded] = useState<number>(0);
+
     const service = new AuthorDataService();
 
-    const loadData = async () => {
+    const loadData = async (userName: String = '') => {
         setView(View.Loading);
         try {
-            const authorData = await service.fetchAuthorData(setPostsLoaded);
-            console.log(authorData);
+            const authorData = await service.fetchAuthorData(setPostsLoaded, userName);
             if (!authorData) {
                 setView(View.NoPost);
                 return;
