@@ -8,12 +8,9 @@ function getAuthorName() {
     if(resourceUrl?.at(3) && resourceUrl?.at(3).includes('@')) {
         return resourceUrl?.at(3);
     }
-    // e.g. https://lindacaroll.medium.com/
-    else if (resourceUrl?.at(2).split(".")?.at(0) && resourceUrl?.at(2).split(".")?.at(0) !== 'medium') {
-        return '@' + resourceUrl?.at(2).split(".")?.at(0);
-    }
-    else {
-        // e.g. https://medium.com/the-partnered-pen/i-asked-chatgpt-how-to-earn-1000-online-it-was-hilarious-33189ab03f60
+    // e.g. https://medium.com/the-partnered-pen/i-asked-chatgpt-how-to-earn-1000-online-it-was-hilarious-33189ab03f60
+    // e.g. https://thebelladonnacomedy.com/dr-seusss-oh-the-places-you-ll-go-with-a-newborn-75c05ea685c2
+    else if (document.querySelector("link[rel='author']")?.getAttribute("href").split("/").length) {
         resourceUrl = document.querySelector("link[rel='author']")?.getAttribute("href").split("/");
         if(resourceUrl?.at(2).split(".")?.at(0) && resourceUrl?.at(2).split(".")?.at(0) !== 'medium') {
             return '@' + resourceUrl?.at(2).split(".")?.at(0);
@@ -21,6 +18,10 @@ function getAuthorName() {
         else {
             return resourceUrl?.at(3);
         }
+    }
+    // e.g. https://lindacaroll.medium.com/
+    else if (resourceUrl?.at(2).split(".")?.at(0) && resourceUrl?.at(2).split(".")?.at(0) !== 'medium') {
+        return '@' + resourceUrl?.at(2).split(".")?.at(0);
     }
 }
 

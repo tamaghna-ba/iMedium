@@ -5,7 +5,7 @@
   "manifest_version": 3,
   "content_scripts": [
     {
-      "matches": ["*://*.medium.com/*"],
+      "matches": ["*://*.medium.com/*","*://*.com/*"],
       "js": ["graphqlQuery.js", "contentScript.js"]
     }
   ],
